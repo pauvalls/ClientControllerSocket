@@ -21,23 +21,9 @@ import org.physicballs.items.*;
  *
  * @author Liam-Portatil
  */
+
+
 public class ClientControllerSocket extends Thread {
-
-    public int getCurrentWidth() {
-        return currentWidth;
-    }
-
-    public void setCurrentWidth(int currentWidth) {
-        this.currentWidth = currentWidth;
-    }
-
-    public int getCurrentHeight() {
-        return currentHeight;
-    }
-
-    public void setCurrentHeight(int currentHeight) {
-        this.currentHeight = currentHeight;
-    }
 
     /**
      * Global parameters
@@ -114,7 +100,7 @@ public class ClientControllerSocket extends Thread {
 
     public void sendBall(AndroidBall baux, int[] pantalla) {
         try {
-          Peticion p = new Peticion("enviar_pelota");
+            Peticion p = new Peticion("enviar_pelota");
             p.pushData(baux);
             p.pushData(pantalla);
             out.writeObject(p);
@@ -128,6 +114,22 @@ public class ClientControllerSocket extends Thread {
             out.writeObject("client_controller");
         } catch (IOException ex) {
         }
+    }
+
+    public int getCurrentWidth() {
+        return currentWidth;
+    }
+
+    public void setCurrentWidth(int currentWidth) {
+        this.currentWidth = currentWidth;
+    }
+
+    public int getCurrentHeight() {
+        return currentHeight;
+    }
+
+    public void setCurrentHeight(int currentHeight) {
+        this.currentHeight = currentHeight;
     }
 
     /**

@@ -21,22 +21,25 @@ public class dummy {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        try {
-            ClientControllerSocket c = new ClientControllerSocket();
-            Scanner i = new Scanner(System.in);
-            Thread.sleep(5000);
-            
-            int[] a = {0 , 0};
-           AndroidBall aux= new AndroidBall(0, 0, 0, 0, 0, 0, 0, "N");
-            c.sendBall(aux, a);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(dummy.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                 
-             
+        ClientControllerSocket c = new ClientControllerSocket();
+        Scanner i = new Scanner(System.in);
+        boolean exit = false;
+        int option = 0;
+        while (!exit) {
+            System.out.println("Menu:");
+            System.out.println("1. Echo");
+            System.out.println("0. exit");
+            option = i.nextInt();
+            i = new Scanner(System.in);
+            switch (option) {
+                case 1:
+                    int[] a = {0 , 0};
+//                    c.sendBall(new Ball(), a);
+                    break;
+    
             }
         }
 
-    
+    }
 
-
+}
